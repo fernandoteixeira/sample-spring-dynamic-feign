@@ -1,0 +1,22 @@
+eureka:
+  client:
+    enabled: true
+    registerWithEureka: false
+    fetchRegistry: true
+    registryFetchIntervalSeconds: 3
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 3
+    leaseExpirationDurationInSeconds: 10
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
