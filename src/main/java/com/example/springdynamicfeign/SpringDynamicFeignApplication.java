@@ -18,9 +18,9 @@ public class SpringDynamicFeignApplication implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     while (true) {
-      request("MPIMAGE");
-      request("MPREPORT");
-      request("MPLOADER");
+      request("APPNAME1");
+      request("APPNAME2");
+      request("APPNAME3");
     }
   }
 
