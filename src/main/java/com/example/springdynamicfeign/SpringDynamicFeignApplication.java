@@ -15,17 +15,15 @@ public class SpringDynamicFeignApplication implements CommandLineRunner {
 
   @Autowired private ApplicationContext applicationContext;
 
-  @Override
-  public void run(String... args) throws Exception {
-    while (true) {
-      request("APPNAME1");
-      request("APPNAME2");
-      request("APPNAME3");
-    }
-  }
-
   public static void main(String[] args) {
     SpringApplication.run(SpringDynamicFeignApplication.class, args);
+  }
+
+  @Override
+  public void run(String... args) throws Exception {
+    request("APPNAME1");
+    request("APPNAME2");
+    request("APPNAME3");
   }
 
   private void request(final String appServiceName) {
